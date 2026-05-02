@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap');
+
+:root {
+    --bg-primary: #f8fafc;
+    --bg-secondary: #f1f5f9;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --card-border: rgba(148, 163, 184, 0.2);
+    --nav-bg: rgba(255, 255, 255, 0.8);
+    --border-color: rgba(226, 232, 240, 0.8);
+}
+
+.dark {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --card-bg: rgba(30, 41, 59, 0.6);
+    --card-border: rgba(148, 163, 184, 0.2);
+    --nav-bg: rgba(15, 23, 42, 0.8);
+    --border-color: rgba(51, 65, 85, 0.5);
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    box-sizing: border-box; 
+    font-family: 'Lato', sans-serif;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    color: var(--text-primary);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.portfolio-title {
+    font-family: 'Playfair Display', serif;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(96, 165, 250, 0.5);
+    box-shadow: 0 20px 40px rgba(96, 165, 250, 0.2);
+}
+
+.skill-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.1) 0%, rgba(167, 139, 250, 0.1) 100%);
+    border: 1px solid rgba(96, 165, 250, 0.3);
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    margin: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.skill-badge:hover {
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.3) 0%, rgba(167, 139, 250, 0.3) 100%);
+    border-color: rgba(96, 165, 250, 0.6);
+    transform: scale(1.05);
+}
+
+.nav-link {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    color: var(--text-secondary);
+}
+
+.nav-link:hover {
+    color: var(--text-primary);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.cta-button {
+    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px rgba(96, 165, 250, 0.3);
+}
+
+.contact-info {
+    background: var(--card-bg);
+    border-left: 4px solid #60a5fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    backdrop-filter: blur(10px);
+}
+
+.theme-toggle {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    color: var(--text-primary);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: var(--bg-secondary);
+    transform: rotate(15deg);
+}
+
+/* Ensure Lucide icons are visible and sized correctly */
+svg[data-lucide] {
+    display: inline-block;
+    stroke: currentColor;
+    stroke-width: 2;
+    fill: none;
+    vertical-align: middle;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease forwards;
+}

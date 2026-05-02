@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suraj Sonwane - Full Stack MERN Developer</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+
+ 
+ <link rel="stylesheet" href="./style.css">
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full">
+  <div class="h-full w-full overflow-auto bg-slate-50 dark:bg-slate-900 transition-colors duration-300"><!-- Navigation -->
+   <nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-700/50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+     <div class="portfolio-title text-2xl gradient-text font-bold">
+      Suraj Sonwane
+     </div>
+     <div class="flex items-center gap-8 text-slate-600 dark:text-slate-300">
+      <div class="nav-link" onclick="scrollToSection('projects')">
+       Projects
+      </div>
+      <div class="nav-link" onclick="scrollToSection('skills')">
+       Skills
+      </div>
+      <div class="nav-link" onclick="scrollToSection('contact')">
+       Contact
+      </div>
+       <div class="nav-link bg-cyan-500/10 hover:bg-cyan-500/20 px-4 py-2 rounded-lg text-cyan-600 dark:text-cyan-400" onclick="return confirm('wanted to download resume')">
+        <a href="/public/resume.pdf" download> Resume</a>
+      </div>
+      <button onclick="toggleTheme()" class="theme-toggle" aria-label="Toggle Theme">
+        <i data-lucide="sun" class="w-5 h-5 block dark:hidden"></i>
+        <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
+      </button>
+     </div>
+    </div>
+   </nav><!-- Hero Section -->
+   <section class="hero-section pt-20">
+    <div class="text-center">
+     <h1 class="portfolio-title text-6xl md:text-7xl gradient-text font-bold mb-6"><span id="hero-name">Suraj Sonwane</span></h1>
+     <p class="text-2xl md:text-3xl text-slate-600 dark:text-slate-300 mb-12"><span id="hero-title">Full Stack MERN Developer</span></p>
+     <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-8 leading-relaxed">Crafting modern web applications with React, Node.js, and MongoDB. Passionate about building scalable solutions and sharing knowledge with the developer community.</p><button onclick="scrollToSection('contact')" class="cta-button px-8 py-3 rounded-lg text-white font-semibold text-lg"> Get In Touch </button>
+    </div>
+   </section><!-- Projects Section -->
+   <section id="projects" class="section-container border-t border-slate-200 dark:border-slate-700/50">
+    <h2 class="portfolio-title text-5xl text-slate-900 dark:text-white mb-12" id="projects-title">Featured Work</h2>
+    <div class="grid md:grid-cols-2 gap-8"><!-- Project 1 -->
+     <div class="project-card">
+      <div class="flex items-center gap-3 mb-4"><i data-lucide="message-circle" class="w-6 h-6 text-blue-400"></i>
+       <h3 class="text-xl font-bold text-slate-900 dark:text-white">Real-Time Chat Application</h3>
+      </div>
+      <p class="text-slate-600 dark:text-slate-400 mb-4">MERN-based real-time chat app with Socket.IO for instant messaging. Features include typing indicators, online status, JWT authentication, file sharing, and responsive UI design with secure MongoDB storage.</p>
+      <div class="flex gap-2 flex-wrap"><span class="skill-badge text-xs text-slate-600 dark:text-slate-300">React.js</span> <span class="skill-badge text-xs text-slate-600 dark:text-slate-300">Node.js</span> <span class="skill-badge text-xs text-slate-600 dark:text-slate-300">Socket.IO</span> <span class="skill-badge text-xs text-slate-600 dark:text-slate-300">MongoDB</span> <span class="skill-badge text-xs text-slate-600 dark:text-slate-300">Docker</span>
+      </div>
+     </div><!-- Project 2 -->
+     <div class="project-card">
+      <div class="flex items-center gap-3 mb-4"><i data-lucide="check-square" class="w-6 h-6 text-purple-400"></i>
+       <h3 class="text-xl font-bold text-slate-900 dark:text-white">Advanced Todo Management App</h3>
+      </div>
+      <p class="text-slate-600 dark:text-slate-400 mb-4">Full-stack Todo App built with MERN stack featuring JWT authentication, task CRUD operations, reminders, priority levels, and filtering capabilities. Includes analytics dashboard and fully tested APIs.</p>
+      <div class="flex gap-2 flex-wrap"><span class="skill-badge text-xs text-slate-600 dark:text-slate-300">MERN Stack</span> <span class="skill-badge text-xs text-slate-600 dark:text-slate-300">JWT Auth</span> <span class="skill-badge text-xs text-slate-600 dark:text-slate-300">Responsive UI</span> <span class="skill-badge text-xs text-slate-600 dark:text-slate-300">Testing</span> <span class="skill-badge text-xs text-slate-600 dark:text-slate-300">Docker</span>
+      </div>
+     </div><!-- Project 3 -->
+     <div class="project-card">
+      <div class="flex items-center gap-3 mb-4"><i data-lucide="code-2" class="w-6 h-6 text-green-400"></i>
+       <h3 class="text-xl font-bold text-slate-900 dark:text-white">Full-Stack Development</h3>
+      </div>
+      <p class="text-slate-600 dark:text-slate-400 mb-4">Expertise in building complete web applications from frontend UI to backend APIs. Proficient in REST API design, database optimization, authentication systems, and production-ready deployments.</p>
+      <div class="flex gap-2 flex-wrap"><span class="skill-badge text-xs text-slate-600 dark:text-slate-300">React</span> <span class="skill-badge text-xs text-slate-600 dark:text-slate-300">Express</span> <span class="skill-badge text-xs text-slate-600 dark:text-slate-300">REST APIs</span> <span class="skill-badge text-xs text-slate-600 dark:text-slate-300">MongoDB</span>
+      </div>
+     </div><!-- Project 4 -->
+     <div class="project-card">
+      <div class="flex items-center gap-3 mb-4"><i data-lucide="zap" class="w-6 h-6 text-pink-400"></i>
+       <h3 class="text-xl font-bold text-slate-900 dark:text-white">DevOps &amp; Deployment</h3>
+      </div>
+      <p class="text-slate-600 dark:text-slate-400 mb-4">Skilled in containerization with Docker, CI/CD pipelines using Jenkins and GitHub Actions. Experienced in AWS deployment, API testing with Postman, unit testing with Jest, and end-to-end testing with Cypress.</p>
+      <div class="flex gap-2 flex-wrap"><span class="skill-badge text-xs text-slate-600 dark:text-slate-300">Docker</span> <span class="skill-badge text-xs text-slate-600 dark:text-slate-300">Jenkins</span> <span class="skill-badge text-xs text-slate-600 dark:text-slate-300">AWS</span> <span class="skill-badge text-xs text-slate-600 dark:text-slate-300">Testing</span> <span class="skill-badge text-xs text-slate-600 dark:text-slate-300">GitHub Actions</span>
+      </div>
+     </div>
+    </div>
+   </section><!-- Skills Section -->
+   <section id="skills" class="section-container border-t border-slate-200 dark:border-slate-700/50">
+    <h2 class="portfolio-title text-5xl text-slate-900 dark:text-white mb-12" id="skills-title">Skills &amp; Expertise</h2>
+    <div class="grid md:grid-cols-3 gap-12">
+     <div>
+      <h3 class="text-2xl font-bold text-blue-400 mb-6">Frontend</h3>
+      <div class="space-y-3">
+       <div class="flex items-center gap-3 text-slate-600 dark:text-slate-300"><i data-lucide="check-circle" class="w-5 h-5 text-green-400"></i> <span>React.js &amp; Next.js</span>
+       </div>
+       <div class="flex items-center gap-3 text-slate-600 dark:text-slate-300"><i data-lucide="check-circle" class="w-5 h-5 text-green-400"></i> <span>JavaScript &amp; TypeScript</span>
+       </div>
+       <div class="flex items-center gap-3 text-slate-600 dark:text-slate-300"><i data-lucide="check-circle" class="w-5 h-5 text-green-400"></i> <span>HTML5 &amp; CSS3</span>
+       </div>
+       <div class="flex items-center gap-3 text-slate-600 dark:text-slate-300"><i data-lucide="check-circle" class="w-5 h-5 text-green-400"></i> <span>Tailwind CSS</span>
+       </div>
+      </div>
+     </div>
+     <div>
+      <h3 class="text-2xl font-bold text-purple-400 mb-6">Backend &amp; Database</h3>
+      <div class="space-y-3">
+       <div class="flex items-center gap-3 text-slate-600 dark:text-slate-300"><i data-lucide="check-circle" class="w-5 h-5 text-green-400"></i> <span>Node.js &amp; Express.js</span>
+       </div>
+       <div class="flex items-center gap-3 text-slate-600 dark:text-slate-300"><i data-lucide="check-circle" class="w-5 h-5 text-green-400"></i> <span>MongoDB &amp; MySQL</span>
+       </div>
+       <div class="flex items-center gap-3 text-slate-600 dark:text-slate-300"><i data-lucide="check-circle" class="w-5 h-5 text-green-400"></i> <span>REST APIs</span>
+       </div>
+       <div class="flex items-center gap-3 text-slate-600 dark:text-slate-300"><i data-lucide="check-circle" class="w-5 h-5 text-green-400"></i> <span>JWT Authentication</span>
+       </div>
+      </div>
+     </div>
+     <div>
+      <h3 class="text-2xl font-bold text-pink-400 mb-6">DevOps &amp; Tools</h3>
+      <div class="space-y-3">
+       <div class="flex items-center gap-3 text-slate-600 dark:text-slate-300"><i data-lucide="check-circle" class="w-5 h-5 text-green-400"></i> <span>Docker &amp; Docker Compose</span>
+       </div>
+       <div class="flex items-center gap-3 text-slate-600 dark:text-slate-300"><i data-lucide="check-circle" class="w-5 h-5 text-green-400"></i> <span>Jenkins &amp; GitHub Actions</span>
+       </div>
+       <div class="flex items-center gap-3 text-slate-600 dark:text-slate-300"><i data-lucide="check-circle" class="w-5 h-5 text-green-400"></i> <span>Jest, Cypress, Postman</span>
+       </div>
+       <div class="flex items-center gap-3 text-slate-600 dark:text-slate-300"><i data-lucide="check-circle" class="w-5 h-5 text-green-400"></i> <span>Git, GitHub, AWS, Linux</span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Contact Section -->
+   <section id="contact" class="section-container border-t border-slate-200 dark:border-slate-700/50 pb-20">
+    <h2 class="portfolio-title text-5xl text-slate-900 dark:text-white mb-12">Get In Touch</h2>
+    <div class="grid md:grid-cols-2 gap-12">
+     <div>
+      <p class="text-slate-600 dark:text-slate-300 text-lg mb-8 leading-relaxed">I'm always interested in hearing about new projects and opportunities. Feel free to reach out if you'd like to collaborate or just have a chat!</p>
+      <div class="space-y-4">
+       <div class="contact-info">
+        <div class="flex items-center gap-3 mb-2"><i data-lucide="mail" class="w-5 h-5 text-blue-400"></i> <span class="text-slate-500 dark:text-slate-400">Email</span>
+        </div><a href="mailto:suraj.sonwane1207@gmail.com" id="contact-email" class="text-slate-900 dark:text-white font-semibold hover:text-blue-500 dark:hover:text-blue-400 transition">suraj.sonwane1207@gmail.com</a>
+       </div>
+       <div class="contact-info">
+        <div class="flex items-center gap-3 mb-2"><i data-lucide="phone" class="w-5 h-5 text-purple-400"></i> <span class="text-slate-500 dark:text-slate-400">Phone</span>
+        </div><a href="tel:+918263937371" id="contact-phone" class="text-slate-900 dark:text-white font-semibold hover:text-purple-500 dark:hover:text-purple-400 transition">+91 8263937371</a>
+       </div>
+       <div class="contact-info">
+        <div class="flex items-center gap-3 mb-2"><i data-lucide="map-pin" class="w-5 h-5 text-green-400"></i> <span class="text-slate-500 dark:text-slate-400">Location</span>
+        </div>
+        <p class="text-slate-900 dark:text-white font-semibold">Balewadi, Pune, Maharashtra</p>
+       </div>
+       <div class="contact-info">
+        <div class="flex items-center gap-3 mb-2"><i data-lucide="globe" class="w-5 h-5 text-blue-400"></i> <span class="text-slate-500 dark:text-slate-400">Website</span>
+        </div><a href="https://surajsonwane.com" target="_blank" rel="noopener noreferrer" class="text-slate-900 dark:text-white font-semibold hover:text-blue-500 dark:hover:text-blue-400 transition">surajsonwane.com</a>
+       </div>
+      </div>
+      <div class="mt-8 flex gap-4"><a href="https://github.com/surajsonwane1207/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-blue-600 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-white transition"> <i data-lucide="github" class="w-6 h-6"></i> </a> <a href="https://linkedin.com/in/surajsonwane1207/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-blue-600 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-white transition"> <i data-lucide="linkedin" class="w-6 h-6"></i> </a> <a href="https://twitter.com/surajsonwane" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-blue-600 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-white transition"> <i data-lucide="twitter" class="w-6 h-6"></i> </a>
+      </div>
+     </div>
+     <form onsubmit="handleSubmit(event)" class="space-y-6">
+      <div><label class="block text-slate-700 dark:text-slate-300 font-semibold mb-2">Name</label> <input type="text" required class="w-full bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-slate-900 dark:text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition" placeholder="Your name">
+      </div>
+      <div><label class="block text-slate-700 dark:text-slate-300 font-semibold mb-2">Email</label> <input type="email" required class="w-full bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-slate-900 dark:text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition" placeholder="your@email.com">
+      </div>
+      <div><label class="block text-slate-700 dark:text-slate-300 font-semibold mb-2">Message</label> <textarea required rows="6" class="w-full bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-slate-900 dark:text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition resize-none" placeholder="Your message..."></textarea>
+      </div><button type="submit" class="cta-button w-full py-3 rounded-lg text-white font-semibold text-lg"> Send Message </button>
+      <div id="form-message" class="text-center text-slate-600 dark:text-slate-400 mt-2"></div>
+     </form>
+    </div>
+   <!-- Footer -->
+   <footer class="border-t border-slate-200 dark:border-slate-700/50 py-8 bg-slate-100 dark:bg-slate-900/50">
+    <div class="max-w-6xl mx-auto px-6 text-center text-slate-600 dark:text-slate-400">
+     <p class="text-sm">Developed by Suraj Sonwane</p>
+    </div>
+   </footer>
+  </div>
+  <script>
+    // Theme and Icon Initialization
+    (function() {
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+            document.documentElement.classList.add('dark');
+        }
+        
+        // Wait for Lucide to load and DOM to be ready
+        function initIcons() {
+            if (window.lucide) {
+                lucide.createIcons();
+            } else {
+                setTimeout(initIcons, 50);
+            }
+        }
+        
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initIcons);
+        } else {
+            initIcons();
+        }
+    })();
+  </script>
+  <script src="./script.js"></script>
+  <script src="./script1.js"></script>
+
+
+</body>
+</html>
