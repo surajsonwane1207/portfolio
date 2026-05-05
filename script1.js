@@ -13,8 +13,8 @@
         else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } }
     }
 })();
-const sendMail = async () => {
-    const response = await fetch("url", data)
-    console.log(response.json())
-    alert("mail send successfully")
-}
+// const sendMail = async () => {
+//     const response = await fetch("url", data)
+//     console.log(response.json())
+//     alert("mail send successfully")
+// }
