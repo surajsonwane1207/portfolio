@@ -1,72 +1,71 @@
 # Suraj Sonwane - Full Stack MERN Developer Portfolio
 
-A modern, responsive, and high-performance single-page portfolio website built with clean code and a focus on visual appeal. This portfolio showcases projects, skills, and professional expertise with a seamless user experience.
+A premium, highly interactive, and optimized single-page portfolio website designed to showcase projects, skills, and technical expertise. Built with modern web design standards and clean practices to be completely recruiter-ready.
 
-![Portfolio Preview](https://via.placeholder.com/1200x600?text=Portfolio+Preview+Placeholder)
+## 🚀 Key Features
 
-## 🚀 Features
-
-- **Dark & Light Mode:** Seamless theme switching with system preference detection and persistent storage via `localStorage`.
-- **Responsive Design:** Optimized for all screen sizes from mobile to desktop using Tailwind CSS.
-- **Dynamic Content:** Integrated with a custom SDK for real-time content updates and easy customization.
-- **Glassmorphism UI:** Modern aesthetic with backdrop filters, smooth gradients, and entrance animations.
-- **Interactive Elements:**
-    - Smooth internal navigation.
-    - Functional contact form with validation.
-    - Resume download integration.
-    - Iconography powered by Lucide.
+- **Recruiter-Focused UI/UX:** Clean, elegant dark/light theme switching with automatic system preference detection and persistent state storage.
+- **Dynamic IDE Visualizer:** Interactive simulated VS Code dashboard displaying developer schemas and credentials in real-time.
+- **Scroll Spy Navigation:** Interactive floating navbar that highlights current section position as you scroll.
+- **MERN-Stack Showcase:** 4 full-stack projects highlighting database design, real-time networking (WebSockets), authentication, and analytics pipelines.
+- **Micro-Animations:** Fluid CSS animations, dynamic typing loops, and glowing hover elevations.
+- **Fully Responsive:** Device-agnostic grid layout tailored for seamless mobile, tablet, and desktop layouts.
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** HTML5, [Tailwind CSS](https://tailwindcss.com/)
-- **Interactivity:** Vanilla JavaScript
-- **Icons:** [Lucide Icons](https://lucide.dev/)
-- **Typography:** [Google Fonts](https://fonts.google.com/) (Playfair Display & Lato)
-- **Styling:** Custom CSS for advanced animations and glassmorphism effects.
+- **Design & Typography:** [Plus Jakarta Sans](https://fonts.google.com/) (Headings) & [Inter](https://fonts.google.com/) (Body Text).
+- **Core Structure:** HTML5 with semantic structures.
+- **Utility Styling:** Tailwind CSS CDN.
+- **Custom CSS:** Advanced custom scrollbars, keyframe floating animations, glassmorphic layouts, and theme transition systems.
+- **Interactivity:** Modern Vanilla JavaScript (typing logic, Intersection Observer scrollspy, and mobile hamburger drawer).
+- **Icons:** Lucide Icons.
 
 ## 📂 Project Structure
 
 ```text
 portfolio/
-├── portfolio.html   # Main entry point and layout
-├── style.css        # Custom styles and theme variables
-├── script.js        # Core interactivity and theme logic
-├── script1.js       # Security and analytics (Cloudflare)
+├── index.html       # Main entry point and semantic layouts
+├── style.css        # Premium style declarations and dark mode theme variables
+├── script.js        # Core animations, typing loop, navigation spy, and drawer controls
+├── script1.js       # Cloudflare platform challenge script
 ├── public/
-│   └── resume.pdf   # Static assets
-└── README.md        # Project documentation
+│   └── suraj_sonwane_fullstack.pdf   # Resume asset
+└── README.md        # Technical project documentation
 ```
 
-## ⚙️ Setup & Installation
+## ⚙️ Quick Start
 
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/surajsonwane1207/portfolio.git
    ```
 
-2. **Open the project:**
-   Simply open `portfolio.html` in your favorite web browser.
-
-3. **Development:**
-   No build step is required as Tailwind CSS and Lucide are loaded via CDN. For a better experience, use a live server extension (like Live Server in VS Code).
+2. **Run Locally:**
+   Simply open `index.html` in any web browser, or launch it with a local server runner (e.g. Live Server in VS Code, or python server):
+   ```bash
+   python3 -m http.server 8000
+   ```
 
 ## 🎨 Customization
 
-Content can be updated directly in the `script.js` file within the `defaultConfig` object:
+Content configuration properties can be customized dynamically in `script.js` within the `defaultConfig` object:
 
 ```javascript
 const defaultConfig = {
     your_name: "Suraj Sonwane",
     your_title: "Full Stack MERN Developer",
-    // ... update other fields here
+    project_title: "Featured Work",
+    skills_title: "Skills & Expertise",
+    contact_email: "suraj.sonwane1207@gmail.com",
+    contact_phone: "+91 8263937371"
 };
 ```
 
-## 🤝 Contact
+## 🤝 Contact & Profiles
 
-Suraj Sonwane - [suraj.sonwane1207@gmail.com](mailto:suraj.sonwane1207@gmail.com)
-
-Project Link: [https://github.com/surajsonwane1207/portfolio](https://github.com/surajsonwane1207/portfolio)
+- **Email:** [suraj.sonwane1207@gmail.com](mailto:suraj.sonwane1207@gmail.com)
+- **LinkedIn:** [linkedin.com/in/surajsonwanefullstack](https://www.linkedin.com/in/surajsonwanefullstack)
+- **GitHub:** [github.com/surajsonwane1207/](https://github.com/surajsonwane1207/)
 
 ---
-Developed with ❤️ by Suraj Sonwane
+Developed with 💻 and ☕ by Suraj Sonwane

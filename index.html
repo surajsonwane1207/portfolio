@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-full">
 
 <head>
   <meta charset="UTF-8">
@@ -22,303 +22,581 @@
   <meta property="twitter:description" content="Crafting modern web applications with React, Node.js, and MongoDB. Check out my featured projects and technical expertise.">
   <meta property="twitter:image" content="https://surajsonwane.com/og-image.png">
 
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script>
     tailwind.config = {
       darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
     }
   </script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="/_sdk/element_sdk.js"></script>
 
-
   <link rel="stylesheet" href="./style.css">
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
 </head>
 
-<body class="h-full">
-  <div class="h-full w-full overflow-auto bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
-    <!-- Navigation -->
-    <nav
-      class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-700/50">
-      <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        <div class="portfolio-title text-2xl gradient-text font-bold">
-          Suraj Sonwane
-        </div>
-        <div class="flex items-center gap-8 text-slate-600 dark:text-slate-300">
-          <div class="nav-link" onclick="scrollToSection('projects')">
-            Projects
+<body class="h-full bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 transition-colors duration-300">
+  <div class="h-full w-full overflow-auto flex flex-col justify-between">
+    <div>
+      <!-- Navigation -->
+      <nav class="fixed top-0 w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+          <div class="portfolio-title text-2xl gradient-text font-bold cursor-pointer" onclick="scrollToSection('hero')">
+            Suraj Sonwane
           </div>
-          <div class="nav-link" onclick="scrollToSection('experience')">
-            Experience
-          </div>
-          <div class="nav-link" onclick="scrollToSection('skills')">
-            Skills
-          </div>
-          <div class="nav-link" onclick="scrollToSection('contact')">
-            Contact
-          </div>
-          <div
-            class="nav-link bg-cyan-500/10 hover:bg-cyan-500/20 px-4 py-2 rounded-lg text-cyan-600 dark:text-cyan-400"
-            onclick="return confirm('download resume'.toUpperCase())">
-            <a href="/public/suraj_sonwane_fullstack.pdf" download> Resume</a>
-          </div>
-          <button onclick="toggleTheme()" class="theme-toggle" aria-label="Toggle Theme">
-            <i data-lucide="sun" class="w-5 h-5 block dark:hidden"></i>
-            <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
-          </button>
-        </div>
-      </div>
-    </nav><!-- Hero Section -->
-    <section class="hero-section pt-20">
-      <div class="text-center">
-        <h1 class="portfolio-title text-6xl md:text-7xl gradient-text font-bold mb-6"><span id="hero-name">Suraj
-            Sonwane</span></h1>
-        <p class="text-2xl md:text-3xl text-slate-600 dark:text-slate-300 mb-12"><span id="hero-title">Full Stack MERN
-            Developer</span></p>
-        <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-8 leading-relaxed">Crafting modern web
-          applications with React, Node.js, and MongoDB. Passionate about building scalable solutions and sharing
-          knowledge with the developer community.</p><button onclick="scrollToSection('contact')"
-          class="cta-button px-8 py-3 rounded-lg text-white font-semibold text-lg"> Get In Touch </button>
-      </div>
-    </section><!-- Projects Section -->
-    <section id="projects" class="section-container border-t border-slate-200 dark:border-slate-700/50">
-      <h2 class="portfolio-title text-5xl text-slate-900 dark:text-white mb-12" id="projects-title">Featured Work</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <!-- Project 1 -->
-        <div class="project-card flex flex-col h-full">
-          <div class="flex items-center gap-3 mb-4"><i data-lucide="message-circle" class="w-6 h-6 text-blue-400"></i>
-            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Real-Time Chat Application</h3>
-          </div>
-          <p class="text-slate-600 dark:text-slate-400 mb-4 flex-grow">MERN-based real-time chat app with Socket.IO for instant
-            messaging. Features include typing indicators, online status, JWT authentication, and secure MongoDB storage.</p>
-          <div class="flex gap-2 flex-wrap mb-6">
-            <span class="skill-badge text-xs text-slate-600 dark:text-slate-300">React.js</span>
-            <span class="skill-badge text-xs text-slate-600 dark:text-slate-300">Node.js</span>
-            <span class="skill-badge text-xs text-slate-600 dark:text-slate-300">Socket.IO</span>
-            <span class="skill-badge text-xs text-slate-600 dark:text-slate-300">MongoDB</span>
-          </div>
-          <div class="flex gap-4">
-            <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm font-semibold text-blue-500 hover:text-blue-600 transition">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 22 3 22 9"/><line x1="10" y1="14" x2="22" y2="4"/></svg>
-              Live Demo
+          
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+            <div class="nav-link" onclick="scrollToSection('projects')">
+              Projects
+            </div>
+            <div class="nav-link" onclick="scrollToSection('experience')">
+              Experience
+            </div>
+            <div class="nav-link" onclick="scrollToSection('skills')">
+              Skills
+            </div>
+            <div class="nav-link" onclick="scrollToSection('contact')">
+              Contact
+            </div>
+            <a href="/public/suraj_sonwane_fullstack.pdf" download class="cta-button px-4 py-2 rounded-lg text-white font-semibold flex items-center gap-1.5 shadow-sm text-xs" onclick="return confirm('Download Resume?')">
+              <i data-lucide="download" class="w-3.5 h-3.5"></i> Resume
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-blue-500 transition">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-              GitHub
-            </a>
+            <button onclick="toggleTheme()" class="theme-toggle" aria-label="Toggle Theme">
+              <i data-lucide="sun" class="w-4 h-4 block dark:hidden"></i>
+              <i data-lucide="moon" class="w-4 h-4 hidden dark:block"></i>
+            </button>
+          </div>
+
+          <!-- Mobile Controls (Toggle & Hamburger) -->
+          <div class="flex md:hidden items-center gap-4">
+            <button onclick="toggleTheme()" class="theme-toggle" aria-label="Toggle Theme">
+              <i data-lucide="sun" class="w-4 h-4 block dark:hidden"></i>
+              <i data-lucide="moon" class="w-4 h-4 hidden dark:block"></i>
+            </button>
+            <button onclick="toggleMobileMenu()" class="text-slate-700 dark:text-slate-200 focus:outline-none" aria-label="Toggle Mobile Menu">
+              <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+            </button>
           </div>
         </div>
-        <!-- Project 2 -->
-        <div class="project-card flex flex-col h-full">
-          <div class="flex items-center gap-3 mb-4"><i data-lucide="check-square" class="w-6 h-6 text-purple-400"></i>
-            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Advanced Todo Management App</h3>
-          </div>
-          <p class="text-slate-600 dark:text-slate-400 mb-4 flex-grow">Full-stack Todo App featuring JWT authentication, task CRUD operations, priority levels, and analytics dashboard. Fully responsive with optimized database queries.</p>
-          <div class="flex gap-2 flex-wrap mb-6">
-            <span class="skill-badge text-xs text-slate-600 dark:text-slate-300">MERN Stack</span>
-            <span class="skill-badge text-xs text-slate-600 dark:text-slate-300">JWT Auth</span>
-            <span class="skill-badge text-xs text-slate-600 dark:text-slate-300">Docker</span>
-            <span class="skill-badge text-xs text-slate-600 dark:text-slate-300">Testing</span>
-          </div>
-          <div class="flex gap-4">
-            <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm font-semibold text-blue-500 hover:text-blue-600 transition">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 22 3 22 9"/><line x1="10" y1="14" x2="22" y2="4"/></svg>
-              Live Demo
-            </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-blue-500 transition">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-              GitHub
-            </a>
-          </div>
-        </div>
+      </nav>
+
+      <!-- Mobile Drawer Menu -->
+      <div id="mobile-menu" class="mobile-nav-drawer fixed top-0 right-0 w-64 h-full z-40 bg-white dark:bg-slate-900 shadow-2xl flex flex-col pt-24 px-6 gap-6 md:hidden border-l border-slate-200 dark:border-slate-800">
+        <div class="nav-link text-lg py-2" onclick="scrollToSection('projects'); toggleMobileMenu()">Projects</div>
+        <div class="nav-link text-lg py-2" onclick="scrollToSection('experience'); toggleMobileMenu()">Experience</div>
+        <div class="nav-link text-lg py-2" onclick="scrollToSection('skills'); toggleMobileMenu()">Skills</div>
+        <div class="nav-link text-lg py-2" onclick="scrollToSection('contact'); toggleMobileMenu()">Contact</div>
+        <a href="/public/suraj_sonwane_fullstack.pdf" download class="cta-button text-center py-3 rounded-lg text-white font-semibold text-sm mt-4 shadow-md flex items-center justify-center gap-2" onclick="return confirm('Download Resume?')">
+          <i data-lucide="download" class="w-4 h-4"></i> Resume
+        </a>
       </div>
-    </section><!-- Experience Section -->
-    <section id="experience" class="section-container border-t border-slate-200 dark:border-slate-700/50">
-      <h2 class="portfolio-title text-5xl text-slate-900 dark:text-white mb-12">Experience</h2>
-      <div class="space-y-8">
-        <!-- Experience Entry 1 -->
-        <div class="relative pl-8 border-l-2 border-blue-500/30">
-          <div class="absolute -left-[11px] top-0 w-5 h-5 rounded-full bg-blue-500 flex items-center justify-center">
-            <div class="w-2 h-2 rounded-full bg-white"></div>
-          </div>
-          <div class="mb-1 flex flex-wrap items-center justify-between gap-2">
-            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Full Stack Developer</h3>
-          </div>
-          <p class="text-lg font-semibold text-blue-500 mb-2">Freelance / Personal Projects</p>
-          <ul class="list-disc list-inside text-slate-600 dark:text-slate-400 space-y-2">
-            <li>Developed and deployed high-performance web applications using the MERN stack.</li>
-            <li>Implemented real-time features with Socket.IO and optimized database performance.</li>
-            <li>Collaborated with clients to translate business requirements into technical solutions.</li>
-          </ul>
-        </div>
-      </div>
-    </section><!-- Skills Section -->
-    <section id="skills" class="section-container border-t border-slate-200 dark:border-slate-700/50">
-      <h2 class="portfolio-title text-5xl text-slate-900 dark:text-white mb-12" id="skills-title">Skills &amp; Expertise
-      </h2>
-      <div class="grid md:grid-cols-3 gap-12">
-        <div>
-          <h3 class="text-2xl font-bold text-blue-400 mb-6">Frontend</h3>
-          <div class="space-y-3">
-            <div class="flex items-center gap-3 text-slate-600 dark:text-slate-300"><i data-lucide="check-circle"
-                class="w-5 h-5 text-green-400"></i> <span>React.js &amp; Next.js</span>
+      <!-- Drawer Overlay -->
+      <div id="mobile-overlay" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-30 hidden opacity-0 transition-opacity duration-300" onclick="toggleMobileMenu()"></div>
+
+      <!-- Hero Section -->
+      <section id="hero" class="hero-section relative overflow-hidden pt-32 pb-20 md:py-0">
+        <!-- Decorative Glow Blobs -->
+        <div class="hero-glow-blob hero-glow-1"></div>
+        <div class="hero-glow-blob hero-glow-2"></div>
+        
+        <div class="max-w-6xl mx-auto px-6 w-full grid md:grid-cols-12 gap-12 items-center relative z-10">
+          <!-- Left Column (Content) -->
+          <div class="md:col-span-7 text-left space-y-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 dark:bg-blue-400/10 text-blue-600 dark:text-blue-400 text-xs font-semibold tracking-wide uppercase">
+              <span class="w-2 h-2 rounded-full bg-blue-500 dark:bg-blue-400 animate-pulse"></span>
+              Available for Opportunities
             </div>
-            <div class="flex items-center gap-3 text-slate-600 dark:text-slate-300"><i data-lucide="check-circle"
-                class="w-5 h-5 text-green-400"></i> <span>JavaScript &amp; TypeScript</span>
+            <h1 class="portfolio-title text-5xl lg:text-7xl font-extrabold tracking-tight leading-tight">
+              Hi, I'm <br class="hidden sm:inline" />
+              <span id="hero-name" class="gradient-text">Suraj Sonwane</span>
+            </h1>
+            
+            <!-- Interactive Subtitle with Typing Cursor -->
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-800 dark:text-slate-200">
+              <span id="hero-title" class="typing-cursor">Full Stack MERN Developer</span>
+            </h2>
+            
+            <p class="text-base md:text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-xl">
+              I engineer high-performance web applications using MongoDB, Express, React, and Node.js. Focused on crafting robust APIs, interactive user interfaces, and scalable deployment pipelines.
+            </p>
+            
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap gap-4 pt-2">
+              <button onclick="scrollToSection('projects')" class="cta-button px-6 py-3.5 rounded-xl text-white font-semibold shadow-md flex items-center gap-2">
+                <span>Explore Projects</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+              <button onclick="scrollToSection('contact')" class="secondary-button px-6 py-3.5 rounded-xl text-slate-700 dark:text-slate-300 font-semibold flex items-center gap-2 border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800">
+                <span>Get in Touch</span>
+              </button>
             </div>
-            <div class="flex items-center gap-3 text-slate-600 dark:text-slate-300"><i data-lucide="check-circle"
-                class="w-5 h-5 text-green-400"></i> <span>HTML5 &amp; CSS3</span>
-            </div>
-            <div class="flex items-center gap-3 text-slate-600 dark:text-slate-300"><i data-lucide="check-circle"
-                class="w-5 h-5 text-green-400"></i> <span>Tailwind CSS</span>
-            </div>
-          </div>
-        </div>
-        <div>
-          <h3 class="text-2xl font-bold text-purple-400 mb-6">Backend &amp; Database</h3>
-          <div class="space-y-3">
-            <div class="flex items-center gap-3 text-slate-600 dark:text-slate-300"><i data-lucide="check-circle"
-                class="w-5 h-5 text-green-400"></i> <span>Node.js &amp; Express.js</span>
-            </div>
-            <div class="flex items-center gap-3 text-slate-600 dark:text-slate-300"><i data-lucide="check-circle"
-                class="w-5 h-5 text-green-400"></i> <span>MongoDB &amp; MySQL</span>
-            </div>
-            <div class="flex items-center gap-3 text-slate-600 dark:text-slate-300"><i data-lucide="check-circle"
-                class="w-5 h-5 text-green-400"></i> <span>REST APIs</span>
-            </div>
-            <div class="flex items-center gap-3 text-slate-600 dark:text-slate-300"><i data-lucide="check-circle"
-                class="w-5 h-5 text-green-400"></i> <span>JWT Authentication</span>
-            </div>
-          </div>
-        </div>
-        <div>
-          <h3 class="text-2xl font-bold text-pink-400 mb-6">DevOps &amp; Tools</h3>
-          <div class="space-y-3">
-            <div class="flex items-center gap-3 text-slate-600 dark:text-slate-300"><i data-lucide="check-circle"
-                class="w-5 h-5 text-green-400"></i> <span>Docker &amp; Docker Compose</span>
-            </div>
-            <div class="flex items-center gap-3 text-slate-600 dark:text-slate-300"><i data-lucide="check-circle"
-                class="w-5 h-5 text-green-400"></i> <span>Jenkins &amp; GitHub Actions</span>
-            </div>
-            <div class="flex items-center gap-3 text-slate-600 dark:text-slate-300"><i data-lucide="check-circle"
-                class="w-5 h-5 text-green-400"></i> <span>Jest, Cypress, Postman</span>
-            </div>
-            <div class="flex items-center gap-3 text-slate-600 dark:text-slate-300"><i data-lucide="check-circle"
-                class="w-5 h-5 text-green-400"></i> <span>Git, GitHub, AWS, Linux</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- Contact Section -->
-    <section id="contact" class="section-container border-t border-slate-200 dark:border-slate-700/50 pb-20">
-      <h2 class="portfolio-title text-5xl text-slate-900 dark:text-white mb-12">Get In Touch</h2>
-      <div class="grid md:grid-cols-2 gap-12">
-        <div>
-          <p class="text-slate-600 dark:text-slate-300 text-lg mb-8 leading-relaxed">I'm always interested in hearing
-            about new projects and opportunities. Feel free to reach out if you'd like to collaborate or just have a
-            chat!</p>
-          <div class="space-y-4">
-            <div class="contact-info">
-              <div class="flex items-center gap-3 mb-2"><i data-lucide="mail" class="w-5 h-5 text-blue-400"></i> <span
-                  class="text-slate-500 dark:text-slate-400">Email</span>
-              </div><a href="mailto:suraj.sonwane1207@gmail.com" id="contact-email"
-                class="text-slate-900 dark:text-white font-semibold hover:text-blue-500 dark:hover:text-blue-400 transition">suraj.sonwane1207@gmail.com</a>
-            </div>
-            <div class="contact-info">
-              <div class="flex items-center gap-3 mb-2"><i data-lucide="phone" class="w-5 h-5 text-purple-400"></i>
-                <span class="text-slate-500 dark:text-slate-400">Phone</span>
-              </div><a href="tel:+918263937371" id="contact-phone"
-                class="text-slate-900 dark:text-white font-semibold hover:text-purple-500 dark:hover:text-purple-400 transition">+91
-                8263937371</a>
-            </div>
-            <div class="contact-info">
-              <div class="flex items-center gap-3 mb-2"><i data-lucide="map-pin" class="w-5 h-5 text-green-400"></i>
-                <span class="text-slate-500 dark:text-slate-400">Location</span>
+
+            <!-- Quick Metrics/Stats Dashboard -->
+            <div class="grid grid-cols-3 gap-6 pt-8 border-t border-slate-200 dark:border-slate-800/80 max-w-lg">
+              <div>
+                <div class="text-3xl font-extrabold text-blue-500 dark:text-blue-400 portfolio-title">1+</div>
+                <div class="text-xs font-medium text-slate-500 dark:text-slate-500 uppercase tracking-wider mt-1">Years Exp.</div>
               </div>
-              <p class="text-slate-900 dark:text-white font-semibold">Balewadi, Pune, Maharashtra</p>
-            </div>
-            <div class="contact-info">
-              <div class="flex items-center gap-3 mb-2"><i data-lucide="globe" class="w-5 h-5 text-blue-400"></i> <span
-                  class="text-slate-500 dark:text-slate-400">Website</span>
-              </div><a href="https://surajsonwane.com" target="_blank" rel="noopener noreferrer"
-                class="text-slate-900 dark:text-white font-semibold hover:text-blue-500 dark:hover:text-blue-400 transition">surajsonwane.com</a>
+              <div>
+                <div class="text-3xl font-extrabold text-purple-500 dark:text-purple-400 portfolio-title">5+</div>
+                <div class="text-xs font-medium text-slate-500 dark:text-slate-500 uppercase tracking-wider mt-1">Projects</div>
+              </div>
+              <div>
+                <div class="text-3xl font-extrabold text-emerald-500 dark:text-emerald-400 portfolio-title">1k+</div>
+                <div class="text-xs font-medium text-slate-500 dark:text-slate-500 uppercase tracking-wider mt-1">Commits</div>
+              </div>
             </div>
           </div>
-          <div class="mt-8 flex gap-4">
-            <a href="https://github.com/surajsonwane1207/" target="_blank" rel="noopener noreferrer"
-              class="w-12 h-12 rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-blue-600 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-white transition"
-              aria-label="GitHub">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-            </a>
-            <a href="https://www.linkedin.com/in/surajsonwanefullstack" target="_blank" rel="noopener noreferrer"
-              class="w-12 h-12 rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-blue-600 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-white transition"
-              aria-label="LinkedIn">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-            </a>
-            <!-- <a href="https://twitter.com/surajsonwane" target="_blank" rel="noopener noreferrer"
-              class="w-12 h-12 rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-blue-600 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-white transition"
-              aria-label="Twitter">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
-            </a> -->
+          
+          <!-- Right Column (Visual Mock IDE Widget) -->
+          <div class="md:col-span-5 relative w-full lg:px-4">
+            <div class="animate-float">
+              <!-- Mock IDE Window -->
+              <div class="w-full rounded-2xl overflow-hidden glass-card shadow-2xl border border-slate-200 dark:border-slate-800/80 bg-slate-900 text-slate-300 code-window">
+                <!-- IDE Header/Tab bar -->
+                <div class="bg-slate-950 px-4 py-3 flex items-center justify-between border-b border-slate-800">
+                  <!-- Window Buttons -->
+                  <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-red-500/80 block"></span>
+                    <span class="w-3 h-3 rounded-full bg-yellow-500/80 block"></span>
+                    <span class="w-3 h-3 rounded-full bg-green-500/80 block"></span>
+                  </div>
+                  <!-- File name tab -->
+                  <div class="text-xs font-medium text-slate-400 flex items-center gap-1.5 px-3 py-1 bg-slate-900 border-x border-t border-slate-800 rounded-t-lg -mb-3.5">
+                    <i data-lucide="file-code-2" class="w-3.5 h-3.5 text-blue-400"></i>
+                    <span>developer.js</span>
+                  </div>
+                  <!-- Settings/Info -->
+                  <div class="flex items-center gap-2 text-slate-500">
+                    <i data-lucide="settings" class="w-3.5 h-3.5"></i>
+                  </div>
+                </div>
+                
+                <!-- Code Content -->
+                <div class="p-5 text-xs lg:text-sm leading-relaxed overflow-x-auto text-left font-mono">
+                  <span class="code-keyword">const</span> <span class="code-name">developer</span> = {<br />
+                  &nbsp;&nbsp;<span class="code-property">name</span>: <span class="code-string">"Suraj Sonwane"</span>,<br />
+                  &nbsp;&nbsp;<span class="code-property">role</span>: <span class="code-string">"Full Stack MERN Developer"</span>,<br />
+                  &nbsp;&nbsp;<span class="code-property">location</span>: <span class="code-string">"Pune, Maharashtra"</span>,<br />
+                  &nbsp;&nbsp;<span class="code-property">skills</span>: [<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">"React"</span>, <span class="code-string">"Node.js"</span>, <span class="code-string">"Express"</span>,<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">"MongoDB"</span>, <span class="code-string">"Docker"</span>, <span class="code-string">"AWS"</span><br />
+                  &nbsp;&nbsp;],<br />
+                  &nbsp;&nbsp;<span class="code-property">hireable</span>: <span class="code-boolean">true</span>,<br />
+                  &nbsp;&nbsp;<span class="code-property">passion</span>: <span class="code-string">"Building scalable web solutions"</span><br />
+                  };<br /><br />
+                  <span class="code-comment">// Ready to collaborate and deliver value</span><br />
+                  <span class="code-keyword">function</span> <span class="code-name">hireMe</span>() {<br />
+                  &nbsp;&nbsp;<span class="code-keyword">return</span> <span class="code-name">developer</span>.<span class="code-property">hireable</span> && <span class="code-name">developer</span>.<span class="code-property">skills</span>;<br />
+                  }
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <form onsubmit="handleSubmit(event)" class="space-y-6">
-          <div><label class="block text-slate-700 dark:text-slate-300 font-semibold mb-2">Name</label> <input
-              type="text" required
-              class="w-full bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-slate-900 dark:text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition"
-              placeholder="Your name">
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="section-container border-t border-slate-200 dark:border-slate-800/50 py-24">
+        <div class="max-w-6xl mx-auto px-6">
+          <div class="text-center mb-16">
+            <h2 id="projects-title" class="portfolio-title text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white">Featured Work</h2>
+            <p class="text-slate-500 dark:text-slate-400 mt-2 text-lg">A selection of my recent full-stack applications</p>
           </div>
-          <div><label class="block text-slate-700 dark:text-slate-300 font-semibold mb-2">Email</label> <input
-              type="email" required
-              class="w-full bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-slate-900 dark:text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition"
-              placeholder="your@email.com">
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Project 1 -->
+            <div class="project-card glow-card glass-card flex flex-col h-full overflow-hidden group">
+              <div class="h-2 bg-gradient-to-r from-blue-500 to-purple-500"></div>
+              <div class="p-6 flex-grow flex flex-col">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="p-2.5 rounded-xl bg-blue-500/10 text-blue-500 dark:text-blue-400">
+                    <i data-lucide="sparkles" class="w-6 h-6"></i>
+                  </div>
+                  <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors duration-300">BharatClean Platform</h3>
+                </div>
+                <p class="text-slate-600 dark:text-slate-400 mb-6 flex-grow text-sm leading-relaxed">
+                  A subscription-based home and office cleaning platform. Features customizable recurring cleaning schedules, service tier selection boards, secure subscription billing, and real-time booking tracking.
+                </p>
+                <div class="flex gap-2 flex-wrap mb-6">
+                  <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300">React.js</span>
+                  <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300">Tailwind CSS</span>
+                  <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300">API Integration</span>
+                  <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300">Subscription Billing</span>
+                </div>
+                <div class="flex gap-4 border-t border-slate-100 dark:border-slate-800/60 pt-4 mt-auto">
+                  <a href="https://bharatclean.netlify.app/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-xs font-bold text-blue-500 hover:text-blue-600 transition-colors">
+                    <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Live Demo
+                  </a>
+                  <a href="https://github.com/surajsonwane1207/bharat-clean" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-xs font-bold text-slate-500 hover:text-blue-500 dark:text-slate-400 dark:hover:text-blue-400 transition-colors">
+                    <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card glow-card glass-card flex flex-col h-full overflow-hidden group">
+              <div class="h-2 bg-gradient-to-r from-purple-500 to-pink-500"></div>
+              <div class="p-6 flex-grow flex flex-col">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="p-2.5 rounded-xl bg-purple-500/10 text-purple-500 dark:text-purple-400">
+                    <i data-lucide="eye" class="w-6 h-6"></i>
+                  </div>
+                  <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-purple-500 dark:group-hover:text-purple-400 transition-colors duration-300">DSA Visualizer Application</h3>
+                </div>
+                <p class="text-slate-600 dark:text-slate-400 mb-6 flex-grow text-sm leading-relaxed">
+                  An interactive algorithm visualization tool showing pathfinding algorithms (Dijkstra, A*, DFS, BFS) and sorting algorithms (Quick Sort, Merge Sort, Bubble Sort) in real-time. Helpful for learning and debugging complex data structures.
+                </p>
+                <div class="flex gap-2 flex-wrap mb-6">
+                  <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300">React.js</span>
+                  <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300">JavaScript</span>
+                  <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300">Algorithms</span>
+                  <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300">CSS3 Animations</span>
+                </div>
+                <div class="flex gap-4 border-t border-slate-100 dark:border-slate-800/60 pt-4 mt-auto">
+                  <a href="https://dsa-visualizer-app.netlify.app" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-xs font-bold text-blue-500 hover:text-blue-600 transition-colors">
+                    <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Live Demo
+                  </a>
+                  <a href="https://github.com/surajsonwane1207/DSA-Visualizer" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-xs font-bold text-slate-500 hover:text-blue-500 dark:text-slate-400 dark:hover:text-blue-400 transition-colors">
+                    <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card glow-card glass-card flex flex-col h-full overflow-hidden group">
+              <div class="h-2 bg-gradient-to-r from-emerald-500 to-blue-500"></div>
+              <div class="p-6 flex-grow flex flex-col">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-500 dark:text-emerald-400">
+                    <i data-lucide="layers" class="w-6 h-6"></i>
+                  </div>
+                  <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors duration-300">React Master Application</h3>
+                </div>
+                <p class="text-slate-600 dark:text-slate-400 mb-6 flex-grow text-sm leading-relaxed">
+                  A feature-rich frontend application demonstrating advanced React design patterns, custom state hooks, dashboard panels, interactive tools, and clean Tailwind layout configurations.
+                </p>
+                <div class="flex gap-2 flex-wrap mb-6">
+                  <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300">React.js</span>
+                  <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300">State Mgmt</span>
+                  <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300">Tailwind CSS</span>
+                  <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300">Responsive UI</span>
+                </div>
+                <div class="flex gap-4 border-t border-slate-100 dark:border-slate-800/60 pt-4 mt-auto">
+                  <a href="https://react-masterapp.netlify.app" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-xs font-bold text-blue-500 hover:text-blue-600 transition-colors">
+                    <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Live Demo
+                  </a>
+                  <a href="https://github.com/surajsonwane1207/react-master-app" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-xs font-bold text-slate-500 hover:text-blue-500 dark:text-slate-400 dark:hover:text-blue-400 transition-colors">
+                    <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card glow-card glass-card flex flex-col h-full overflow-hidden group">
+              <div class="h-2 bg-gradient-to-r from-pink-500 to-orange-500"></div>
+              <div class="p-6 flex-grow flex flex-col">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="p-2.5 rounded-xl bg-orange-500/10 text-orange-500 dark:text-orange-400">
+                    <i data-lucide="shopping-bag" class="w-6 h-6"></i>
+                  </div>
+                  <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-orange-500 dark:group-hover:text-orange-400 transition-colors duration-300">E-Commerce REST API Engine</h3>
+                </div>
+                <p class="text-slate-600 dark:text-slate-400 mb-6 flex-grow text-sm leading-relaxed">
+                  Enterprise backend engine for digital commerce. Features order placement pipelines, secure Stripe API integration, dashboard analysis hooks, role authorization middleware, and Jest coverage tests.
+                </p>
+                <div class="flex gap-2 flex-wrap mb-6">
+                  <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300">Node.js</span>
+                  <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300">Stripe API</span>
+                  <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300">MongoDB</span>
+                  <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300">Jest Testing</span>
+                </div>
+                <div class="flex gap-4 border-t border-slate-100 dark:border-slate-800/60 pt-4 mt-auto">
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-xs font-bold text-blue-500 hover:text-blue-600 transition-colors">
+                    <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Live Demo
+                  </a>
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-xs font-bold text-slate-500 hover:text-blue-500 dark:text-slate-400 dark:hover:text-blue-400 transition-colors">
+                    <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
-          <div><label class="block text-slate-700 dark:text-slate-300 font-semibold mb-2">Message</label> <textarea
-              required rows="6"
-              class="w-full bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-slate-900 dark:text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition resize-none"
-              placeholder="Your message..."></textarea>
-          </div><button type="submit" class="cta-button w-full py-3 rounded-lg text-white font-semibold text-lg"> Send
-            Message </button>
-          <div id="form-message" class="text-center text-slate-600 dark:text-slate-400 mt-2"></div>
-        </form>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section id="experience" class="section-container border-t border-slate-200 dark:border-slate-800/50 py-24">
+        <div class="max-w-4xl mx-auto px-6">
+          <div class="text-center md:text-left mb-16">
+            <h2 class="portfolio-title text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white">Experience</h2>
+            <p class="text-slate-500 dark:text-slate-400 mt-2 text-lg">My professional journey and background</p>
+          </div>
+          
+          <div class="relative pl-6 md:pl-8 border-l border-slate-200 dark:border-slate-800 space-y-12">
+            <!-- Experience 1 -->
+            <div class="relative group">
+              <!-- Node indicator -->
+              <div class="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 md:w-5 md:h-5 rounded-full bg-blue-500 dark:bg-blue-400 border-4 border-slate-50 dark:border-slate-900 timeline-dot transition-all duration-300 group-hover:scale-125"></div>
+              
+              <!-- Card -->
+              <div class="glass-card p-6 glow-card">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
+                  <div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white">Full Stack MERN Developer</h3>
+                    <p class="text-sm font-semibold text-blue-500 dark:text-blue-400 mt-0.5">Freelance / Personal Projects</p>
+                  </div>
+                  <span class="inline-flex px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-600 dark:text-blue-400 self-start md:self-center">
+                    2024 - Present
+                  </span>
+                </div>
+                <ul class="space-y-3.5 text-sm text-slate-600 dark:text-slate-400">
+                  <li class="flex items-start gap-2.5">
+                    <i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0"></i>
+                    <span>Architected and deployed high-performance web applications using the MERN stack, ensuring clean and reusable component logic.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0"></i>
+                    <span>Integrated secure RESTful APIs with JSON Web Tokens (JWT) authentication, middleware authorization, and robust validation structures.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0"></i>
+                    <span>Leveraged Socket.IO to power high-concurrency real-time features like instant chat channels and activity markers.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <i data-lucide="check" class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0"></i>
+                    <span>Optimized MongoDB query execution times through proper indexing and relational references (Mongoose schemas).</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="section-container border-t border-slate-200 dark:border-slate-800/50 py-24">
+        <div class="max-w-6xl mx-auto px-6">
+          <div class="text-center mb-16">
+            <h2 id="skills-title" class="portfolio-title text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white">Skills &amp; Expertise</h2>
+            <p class="text-slate-500 dark:text-slate-400 mt-2 text-lg">Languages, frameworks, and deployment workflows I specialize in</p>
+          </div>
+          
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- Frontend Card -->
+            <div class="glass-card p-8 glow-card flex flex-col">
+              <div class="flex items-center gap-3.5 mb-6 pb-4 border-b border-slate-100 dark:border-slate-800/80">
+                <div class="p-2.5 rounded-xl bg-blue-500/10 text-blue-500 dark:text-blue-400">
+                  <i data-lucide="layout" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Frontend</h3>
+              </div>
+              <div class="flex flex-wrap gap-2.5">
+                <span class="skill-badge text-xs"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mr-1.5 text-blue-400 shrink-0"></i>React.js</span>
+                <span class="skill-badge text-xs"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mr-1.5 text-blue-400 shrink-0"></i>Next.js</span>
+                <span class="skill-badge text-xs"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mr-1.5 text-blue-400 shrink-0"></i>JavaScript</span>
+                <span class="skill-badge text-xs"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mr-1.5 text-blue-400 shrink-0"></i>TypeScript</span>
+                <span class="skill-badge text-xs"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mr-1.5 text-blue-400 shrink-0"></i>Tailwind CSS</span>
+                <span class="skill-badge text-xs"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mr-1.5 text-blue-400 shrink-0"></i>HTML5 &amp; CSS3</span>
+                <span class="skill-badge text-xs"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mr-1.5 text-blue-400 shrink-0"></i>Redux / Context</span>
+              </div>
+            </div>
+            
+            <!-- Backend Card -->
+            <div class="glass-card p-8 glow-card flex flex-col">
+              <div class="flex items-center gap-3.5 mb-6 pb-4 border-b border-slate-100 dark:border-slate-800/80">
+                <div class="p-2.5 rounded-xl bg-purple-500/10 text-purple-500 dark:text-purple-400">
+                  <i data-lucide="server" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Backend</h3>
+              </div>
+              <div class="flex flex-wrap gap-2.5">
+                <span class="skill-badge text-xs"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mr-1.5 text-purple-400 shrink-0"></i>Node.js</span>
+                <span class="skill-badge text-xs"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mr-1.5 text-purple-400 shrink-0"></i>Express.js</span>
+                <span class="skill-badge text-xs"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mr-1.5 text-purple-400 shrink-0"></i>MongoDB</span>
+                <span class="skill-badge text-xs"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mr-1.5 text-purple-400 shrink-0"></i>RESTful APIs</span>
+                <span class="skill-badge text-xs"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mr-1.5 text-purple-400 shrink-0"></i>WebSockets</span>
+                <span class="skill-badge text-xs"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mr-1.5 text-purple-400 shrink-0"></i>JWT Authentication</span>
+                <span class="skill-badge text-xs"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mr-1.5 text-purple-400 shrink-0"></i>Mongoose / ORM</span>
+              </div>
+            </div>
+            
+            <!-- DevOps & Tools Card -->
+            <div class="glass-card p-8 glow-card flex flex-col">
+              <div class="flex items-center gap-3.5 mb-6 pb-4 border-b border-slate-100 dark:border-slate-800/80">
+                <div class="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-500 dark:text-emerald-400">
+                  <i data-lucide="cpu" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-900 dark:text-white">DevOps &amp; Tools</h3>
+              </div>
+              <div class="flex flex-wrap gap-2.5">
+                <span class="skill-badge text-xs"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mr-1.5 text-emerald-400 shrink-0"></i>Docker</span>
+                <span class="skill-badge text-xs"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mr-1.5 text-emerald-400 shrink-0"></i>GitHub Actions</span>
+                <span class="skill-badge text-xs"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mr-1.5 text-emerald-400 shrink-0"></i>Jenkins</span>
+                <span class="skill-badge text-xs"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mr-1.5 text-emerald-400 shrink-0"></i>AWS (EC2, S3)</span>
+                <span class="skill-badge text-xs"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mr-1.5 text-emerald-400 shrink-0"></i>Jest &amp; Cypress</span>
+                <span class="skill-badge text-xs"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mr-1.5 text-emerald-400 shrink-0"></i>Git &amp; GitHub</span>
+                <span class="skill-badge text-xs"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 mr-1.5 text-emerald-400 shrink-0"></i>Linux Shell</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="section-container border-t border-slate-200 dark:border-slate-800/50 py-24 pb-32">
+        <div class="max-w-6xl mx-auto px-6">
+          <div class="text-center mb-16">
+            <h2 class="portfolio-title text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white">Get In Touch</h2>
+            <p class="text-slate-500 dark:text-slate-400 mt-2 text-lg">Let's discuss an opportunity or project proposal</p>
+          </div>
+          
+          <div class="grid md:grid-cols-12 gap-12 items-stretch">
+            <!-- Contact Details -->
+            <div class="md:col-span-5 flex flex-col justify-between space-y-8">
+              <div class="space-y-6">
+                <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-base">
+                  I am always open to discussing new web development roles, freelance architectures, or tech collaborations. Drop a line and I'll get back to you within 24 hours.
+                </p>
+                
+                <div class="space-y-4 pt-4">
+                  <!-- Email -->
+                  <div class="contact-info">
+                    <div class="p-2.5 rounded-lg bg-blue-500/10 text-blue-500">
+                      <i data-lucide="mail" class="w-5 h-5"></i>
+                    </div>
+                    <div class="flex-grow">
+                      <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Email</div>
+                      <a href="mailto:suraj.sonwane1207@gmail.com" id="contact-email" class="text-slate-900 dark:text-white font-bold hover:text-blue-500 transition-colors">
+                        suraj.sonwane1207@gmail.com
+                      </a>
+                    </div>
+                  </div>
+                  
+                  <!-- Phone -->
+                  <div class="contact-info">
+                    <div class="p-2.5 rounded-lg bg-purple-500/10 text-purple-500">
+                      <i data-lucide="phone" class="w-5 h-5"></i>
+                    </div>
+                    <div class="flex-grow">
+                      <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Phone</div>
+                      <a href="tel:+918263937371" id="contact-phone" class="text-slate-900 dark:text-white font-bold hover:text-purple-500 transition-colors">
+                        +91 8263937371
+                      </a>
+                    </div>
+                  </div>
+                  
+                  <!-- Location -->
+                  <div class="contact-info">
+                    <div class="p-2.5 rounded-lg bg-green-500/10 text-green-500">
+                      <i data-lucide="map-pin" class="w-5 h-5"></i>
+                    </div>
+                    <div class="flex-grow">
+                      <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Location</div>
+                      <p class="text-slate-900 dark:text-white font-bold">
+                        Balewadi, Pune, Maharashtra
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Social Icons -->
+              <div class="flex items-center gap-4 pt-6">
+                <a href="https://github.com/surajsonwane1207/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:text-white hover:bg-slate-900 dark:hover:bg-white dark:hover:text-slate-950 flex items-center justify-center transition-all duration-300" aria-label="GitHub">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/surajsonwanefullstack" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:text-white hover:bg-[#0077b5] dark:hover:bg-[#0077b5] flex items-center justify-center transition-all duration-300" aria-label="LinkedIn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+              </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="md:col-span-7">
+              <form onsubmit="handleSubmit(event)" class="glass-card p-8 space-y-6 flex flex-col h-full border border-slate-200 dark:border-slate-800/80">
+                <div class="grid sm:grid-cols-2 gap-6">
+                  <div>
+                    <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Name</label>
+                    <input type="text" required class="w-full bg-slate-100/50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/60 rounded-xl px-4 py-3 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all duration-300" placeholder="Your name">
+                  </div>
+                  <div>
+                    <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Email</label>
+                    <input type="email" required class="w-full bg-slate-100/50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/60 rounded-xl px-4 py-3 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all duration-300" placeholder="your@email.com">
+                  </div>
+                </div>
+                <div>
+                  <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Subject</label>
+                  <input type="text" required class="w-full bg-slate-100/50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/60 rounded-xl px-4 py-3 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all duration-300" placeholder="Opportunity discussion...">
+                </div>
+                <div>
+                  <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Message</label>
+                  <textarea required rows="5" class="w-full bg-slate-100/50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/60 rounded-xl px-4 py-3 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all duration-300 resize-none" placeholder="Let's build something great together..."></textarea>
+                </div>
+                <button type="submit" class="cta-button w-full py-3.5 rounded-xl text-white font-semibold text-sm shadow-md flex items-center justify-center gap-2">
+                  <span>Send Message</span>
+                  <i data-lucide="send" class="w-4 h-4"></i>
+                </button>
+                <div id="form-message" class="text-center text-sm font-medium mt-2"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 dark:border-slate-800/50 py-10 bg-slate-100/30 dark:bg-slate-950/40">
+      <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500 dark:text-slate-400 text-sm">
+        <p>&copy; 2026 Suraj Sonwane. All rights reserved.</p>
+        <p class="flex items-center gap-1">
+          Built with passion &amp; MERN expertise
+          <i data-lucide="heart" class="w-4.5 h-4.5 text-red-500 fill-current"></i>
+        </p>
       </div>
-      <!-- Footer -->
-      <footer class="border-t border-slate-200 dark:border-slate-700/50 py-8 bg-slate-100 dark:bg-slate-900/50">
-        <div class="max-w-6xl mx-auto px-6 text-center text-slate-600 dark:text-slate-400">
-          <p class="text-sm">Developed by Suraj Sonwane</p>
-        </div>
-      </footer>
+    </footer>
   </div>
+
   <script>
-      // Theme and Icon Initialization
-      (function () {
-        const savedTheme = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-          document.documentElement.classList.add('dark');
-        }
+    // Theme and Icon Initialization
+    (function () {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        document.documentElement.classList.add('dark');
+      }
 
-        // Wait for Lucide to load and DOM to be ready
-        function initIcons() {
-          if (window.lucide) {
-            lucide.createIcons();
-          } else {
-            setTimeout(initIcons, 50);
-          }
-        }
-
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', initIcons);
+      function initIcons() {
+        if (window.lucide) {
+          lucide.createIcons();
         } else {
-          initIcons();
+          setTimeout(initIcons, 50);
         }
-      })();
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initIcons);
+      } else {
+        initIcons();
+      }
+    })();
   </script>
   <script src="./script.js"></script>
   <script src="./script1.js"></script>
-
-
 </body>
 
 </html>
